@@ -1,0 +1,32 @@
+2. In the context of previous applications.  Explain how would you
+  improve the time load for the html pages that contained the uploaded
+  images. Order the improvements from the first you would do to the
+  last maximizing benefit/cost, please explain your ordering.
+
+  Answer: 
+  First of all, I would minimize and compress the images I wanted to load and display in a page, is a simple solution with effective results.
+  If we take into account a high traffic scenario and the website is available for the whole world, I think using a CDN, so we can host the images/files, they can often save up to 60% bandwidth and halve the number of requests the website makes, also, because we can host the images across a large network of servers around the world, when a user visits the website from China, they are downloading files from the server that is closets to them.
+  Another solution we can use, if it is very large images, link thumbnails to the image, this allows a user to decide whether they want to wait for the large image to load or if the thumbnail picture is sufficient enough to use but the biggest advantages in linking thumbnails to larger images is that websites load faster because most thumbnail images are a lot smaller in size.
+
+
+
+ 3. Imagine we want to use a 3th party library in order to re-size
+  images during the upload. Explain how would you keep dependencies in
+  the different environments, e.g. QA vs production (Choose for the
+  explanation any OS and tools you prefer).
+
+  Answer:
+  I don't know if I understood the question in the right way but, 
+  provided that we are using a virtual environment to keep your dependencies separate from the globally installed pip packages, you should be able to use pip's freeze command, "pip freeze > dependencies.txt"
+
+  Then in another environment, we just need to run "pip install -r dependencies.txt" to install all the dependencies for the project.
+
+
+
+4. Imagine we want to count how many people see a picture without
+  using an external service e.g Google Analytics. Explain how would
+  you do this. Take into account two scenarios, first a low traffic
+  scenario and then a high traffic scenario.
+
+  Answer:Taking into account a low traffic scenario, I would use a middleware to track page visitor, in this case, how many times a image is seen.
+  For a high traffic scenario and a bigger production environment,, I would use Redis and his method called INCR to count how many times a image is seen.
