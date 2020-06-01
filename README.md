@@ -1,7 +1,3 @@
-# imgupload
-image upload
+## Small project for uploading and view images
 
-
-Small project for uploading and view images
-
-Python and Flask
+- Python and Flask
